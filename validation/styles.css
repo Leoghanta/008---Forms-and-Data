@@ -1,0 +1,96 @@
+/* Base body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff; /* Light blue background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Form container styling */
+.form-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    max-width: 400px; /* Limit width for a compact look */
+    width: 100%;
+    text-align: center; /* Center align the form */
+}
+
+/* Form heading */
+h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+}
+
+/* Label styling */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Input and textarea styling */
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s, border-color 0.2s; /* Smooth transitions */
+}
+
+/* Focus state for inputs */
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #66afe9; /* Blue border on focus */
+    box-shadow: inset 0 3px 6px rgba(0, 123, 255, 0.2); /* More depth on focus */
+}
+
+/* Submit button styling */
+button {
+    padding: 12px 20px;
+    background-color: #28a745; /* Green background */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth background change */
+}
+
+/* Hover effect for button */
+button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Error message styling */
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    display: none; /* Hidden by default, shown when an error occurs */
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 500px) {
+    .form-container {
+        padding: 20px;
+    }
+
+    input, textarea {
+        font-size: 0.9em;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+}

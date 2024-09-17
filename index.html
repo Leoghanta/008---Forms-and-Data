@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms and JavaScript Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/sunburst.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+    <header>
+        <h1>Workshop 8: Forms and JavaScript</h1>
+    </header>
+
+    <div class="container">
+        <h1>Workshop 8</h1>
+        <p>In this workshop, you’ll learn how to create a simple form that collects data from the user, and uses JavaScript to process and display a result. We’ll build an interactive age calculator.</p>
+        
+        <div class="browser-section">
+            <h2>Age Calculator</h2>
+            <p>We'll create a form where the user can input their birth year, and JavaScript will calculate their current age based on the current year.</p>
+
+            <h3>Example Form:</h3>
+            <pre><code class="language-html">
+&lt;form&gt;
+    &lt;label for="birthYearInput"&gt;Enter your birth year:&lt;/label&gt;
+    &lt;input type="number" id="birthYearInput" placeholder="Enter your birth year"&gt;
+    &lt;button type="button" onclick="calculateAge()"&gt;Calculate Age&lt;/button&gt;
+&lt;/form&gt;
+&lt;p id="ageResult"&gt;&lt;/p&gt;
+            </code></pre>
+
+            <h3>JavaScript Code:</h3>
+            <pre><code class="language-javascript">
+function calculateAge() {
+    let birthYear = document.getElementById("birthYearInput").value;
+    let currentYear = new Date().getFullYear();
+    let age = currentYear - birthYear;
+
+    if (birthYear === "" || birthYear > currentYear) {
+        document.getElementById("ageResult").innerText = "Please enter a valid year.";
+    } else {
+        document.getElementById("ageResult").innerText = "You are " + age + " years old.";
+    }
+}
+            </code></pre>
+
+            <h3>Try It Out:</h3>
+            <form>
+                <label for="birthYearInput">Enter your birth year:</label>
+                <input type="number" id="birthYearInput" placeholder="Enter your birth year">
+                <button type="button" onclick="calculateAge()">Calculate Age</button>
+            </form>
+            <p id="ageResult"></p>
+        </div>
+
+        <div class="browser-section">
+            <h2>Text Reverser</h2>
+            <p>Now let’s create a fun tool that takes a string of text from the user, reverses it, and displays the reversed text back to the user.</p>
+
+            <h3>Example Form:</h3>
+            <pre><code class="language-html">
+&lt;form&gt;
+    &lt;label for="textInput"&gt;Enter text to reverse:&lt;/label&gt;
+    &lt;input type="text" id="textInput" placeholder="Enter your text"&gt;
+    &lt;button type="button" onclick="reverseText()"&gt;Reverse Text&lt;/button&gt;
+&lt;/form&gt;
+&lt;p id="reversedText"&gt;&lt;/p&gt;
+            </code></pre>
+
+            <h3>JavaScript Code:</h3>
+            <pre><code class="language-javascript">
+function reverseText() {
+    let text = document.getElementById("textInput").value;
+    let reversed = text.split("").reverse().join("");
+
+    if (text === "") {
+        document.getElementById("reversedText").innerText = "Please enter some text.";
+    } else {
+        document.getElementById("reversedText").innerText = "Reversed text: " + reversed;
+    }
+}
+            </code></pre>
+
+            <h3>Try It Out:</h3>
+            <form>
+                <label for="textInput">Enter text to reverse:</label>
+                <input type="text" id="textInput" placeholder="Enter your text">
+                <button type="button" onclick="reverseText()">Reverse Text</button>
+            </form>
+            <p id="reversedText"></p>
+        </div>
+
+        <div class="browser-section">
+            <h2>Exercises</h2>
+            <ul id="taskList">
+                <li><input type="checkbox" id="task1"><label for="task1"> CASE STUDY: Form Validation<br>
+                    Creating forms for users to complete is a useful addition to any website. However, it is important to 
+                    validate the information before it is submitted. In the validation folder, you have a completed HTML and 
+                    CSS file. It is your job to validate the user input using JavaScript.  There is a case study file to work 
+                    through which gives step by step instructions. 
+                </label></li>
+
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; J. Wilson. Dundee and Angus College.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
